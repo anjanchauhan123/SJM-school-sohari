@@ -102,6 +102,10 @@ header{
     gap:30px;
 }
 
+.nav-menu li.dropdown{
+    position: relative;
+}
+
 .nav-menu a{
     text-decoration:none;
     color:white;
@@ -114,6 +118,31 @@ header{
     border-bottom: 2px solid #f4b400;
 }
 
+/* Submenu hidden by default */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #111;
+    list-style: none;
+    padding: 0;
+    min-width: 150px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index:    1;
+}
+
+.submenu li a {
+    padding: 9px 0;
+    display: inline-block;
+}
+
+/* Hover pe show hoga */
+.dropdown:hover .submenu {
+    display: block;
+    padding: 8px 14px;
+}
+
 
 .bg_color{
     background: transparent linear-gradient(180deg, #FFF9E0 0%, #FFDDDD 100%) 0% 0% no-repeat padding-box;
@@ -121,11 +150,32 @@ header{
 }
 
 
+.bg_img{
+    background: url(../images/bg-1.jpg);
+    padding: 40px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 
 .bg_dark{
     background: #550009;
     padding: 40px 0;
+}
+
+
+.right_border{
+    position: relative;
+}
+
+
+.right_border:after {
+        content: "";
+    border-right: 1px dashed #FFBB00;
+    top: -40px;
+    bottom: -40px;
+    position: absolute;
+    right: 6%;
 }
 
 .bg_light{
@@ -138,15 +188,30 @@ header{
     box-sizing: border-box;
 }
 
-.cta {
-    background: #E60019;
+.cta ,.form-container button{
+   background: #E60019;
     border-radius: 40px;
     color: #fff;
     text-decoration: none;
-    padding: 8px 23px;
+    padding: 14px 45px 14px 30px;
     display: inline-block;
     font-size: 18px;
-    margin-top: 12px;
+    margin-top: 30px;
+    border: 0;
+    background-image: url(../images/next-arrow-w.svg);
+    background-repeat: no-repeat;
+    background-position: center right 25px;
+    background-size: 8px;
+}
+
+
+.form-container button{
+    margin-top: 0; 
+}
+
+hr.hr{
+    border: 1px dashed #FFBB00;
+    margin: 40px 0;
 }
 
 
@@ -169,28 +234,67 @@ p.white.small {
         margin-top: 4px;
 }
 
+.span_cover {
+    margin-top: 10px;
+}
+
 .labels{
     margin: 0;
     padding: 0;
 }
 
 .labels .label{
-         background: #fff;
+    background: #fff;
     color: #000;
     padding: 4px 9px;
     display: inline-block;
     border-radius: 6px;
     font-weight: 600;
-    margin: 5px 4px;
+    margin: 5px 4px 5px 0px;
     font-size: 14px;
 }
 
-span.number {
+span.number,
+span.message {
+    position: relative;
     display: inline-block;
     font-size: 14px;
     color: #fff;
-    background: url(../images/email-icon.svg);
+    padding-left: 25px;
+}
+
+span.number:after{
+    content: "";
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    background: url(../images/phone-icon.svg) #E60019;
     background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+    top: -3px;
+    border-radius: 3px;
+}
+
+span.message:after {
+    content: "";
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    background: url(../images/email-icon.svg) #E60019;;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+    top: -3px;
+    border-radius: 3px;
+}
+
+span.number {
+    margin-right: 10px;
 }
 
 .flex_box > .col_60 > img{
@@ -203,13 +307,13 @@ span.number {
 }
 
 .col_60{
-    flex: 0 0 63%;
-    max-width: 63%;
+    flex: 0 0 58%;
+    max-width: 58%;
 }
 
 .col_40{
-    flex: 0 0 37%;
-    max-width: 37%;
+    flex: 0 0 42%;
+    max-width: 42%;
 }
 
 .col{
@@ -235,8 +339,9 @@ background: #550009 0% 0% no-repeat padding-box;
     border-radius: 8px;
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 6px;
+    left: 6px;
+    right: 6px;
     top: auto;
     opacity: .8;
     padding: 17px 15px;
@@ -408,7 +513,7 @@ ul.map_details {
  flex: 0 0 70%;
     max-width: 70%;
     margin: 0 0 0 14px;
-    line-height: 24px;
+    line-height: 22px;
 }
 
 .flex_box.alin-center {
@@ -437,14 +542,6 @@ ul.map_details {
 
 .result-x{
     margin-bottom: 30px; 
-}
-
-.general-information {
-    background: #550009;
-    color: #fff;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-sizing: border-box;
 }
 
 .table_coll {
@@ -480,8 +577,9 @@ ul.map_details {
     font-size: 13px;
 }
 
-.staff-information,.result,.school-infrastructure {
-    background: #550009;
+.staff-information,.result,.school-infrastructure,.general-information {
+    /*background: #550009;*/
+    background: url(../images/Mandatory-Public-Disclosre-bg.jpg);
     color: #fff;
     padding: 30px 40px;
     border-radius: 10px;
@@ -504,6 +602,56 @@ ul.map_details {
     padding-left:15px;
     padding-right:15px;
 }
+
+.banner{
+    line-height: 0;
+}
+
+
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-container input, 
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+
+
+
 
 /* Responsive Breakpoints */
 
@@ -553,6 +701,22 @@ ul.map_details {
 
     .menu-toggle{
         display:block;
+    }
+
+    .bg_img{
+        text-align: center;
+    }
+
+    .right_border {
+    margin-bottom: 20px;
+    }
+
+    span.number{
+                margin: 14px 0; 
+    }
+
+    .right_border:after{
+        display: none;
     }
 
     .nav-menu{

@@ -11,8 +11,6 @@
 <!-- Swiper CSS -->
 <!-- Slick CSS -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-
-
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
@@ -32,12 +30,21 @@
 
         <nav>
             <ul class="nav-menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Academics</a></li>
-                <li><a href="#">Notification</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
+            <li><a href="index.html" class="active">Home</a></li>
+
+            <li class="dropdown">
+                <a href="about-us.html">About</a>
+                <ul class="submenu">
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="faculty.html">Faculty</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#" href="academics.html">Academics</a></li>
+            <li><a href="#Notification">Notification</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
         </nav>
 
     </div>
@@ -58,10 +65,10 @@
 
 
 
-<section class="bg_dark">
+<section class="bg_img">
     <div class="container">
         <div class="flex_box">
-            <div class="col_60">
+            <div class="col_60 right_border">
                 <img src="assets/images/logo-01.png">
             </div>
             <div class="col_40">
@@ -72,9 +79,10 @@
                     <label class="label">CBSE School Code - 44422</label>
 
 
-                    <span class="number">+91 94184 80960 (Principal)</span>
-
-                    <span class="number">sjmgssssohari@gmail.com</span>
+                    <div class="span_cover">
+                        <span class="number">+91 94184 80960 (Principal)</span>
+                        <span class="message">sjmgssssohari@gmail.com</span>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -133,7 +141,7 @@
     </div>
 </section>
 
-<section class="bg_dark_2">
+<section class="bg_dark_2" id="Notification">
     <div class="container">
         <div class="flex_box">
             <div class="col space-r">
@@ -440,108 +448,7 @@
 
 <!-- Slick JS -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script>
-
-
-
-
-
-$(document).ready(function(){
-  $('.slider').slick({
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 3000
-  });
-
-  // Custom Buttons
-  $('.next').click(function(){
-      $('.slider').slick('slickNext');
-  });
-
-  $('.prev').click(function(){
-      $('.slider').slick('slickPrev');
-  });
-
-
-$('.Public_disclosre').slick({
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    autoplay: true,
-    autoplaySpeed: 3000
-});
-
-function setEqualHeight(){
-    var maxHeight = 0;
-
-    $('.Public_disclosre .slick-slide').css('height','auto');
-
-    $('.Public_disclosre .slick-slide').each(function(){
-        var height = $(this).outerHeight();
-        if(height > maxHeight){
-            maxHeight = height;
-        }
-    });
-
-    $('.Public_disclosre .slick-slide').height(maxHeight);
-}
-
-/* slick position change */
-$('.Public_disclosre').on('setPosition', function () {
-    setEqualHeight();
-});
-
-/* browser resize */
-$(window).on('resize', function(){
-    setEqualHeight();
-});
-
-function mobileSlider(){
-    var windowWidth = $(window).width();
-
-    if(windowWidth < 990){ // Mobile + small tablets
-        var slidesToShow = (windowWidth < 576) ? 1 : 2; // <576px → 1 slide, else 2 slides
-
-        if (!$('.pic_box').hasClass('slick-initialized')) {
-            $('.pic_box').slick({
-                slidesToShow: slidesToShow,
-                slidesToScroll: 1,
-                arrows: true,
-                dots: true,
-                autoplay: true,
-                autoplaySpeed: 3000
-            });
-        } else {
-            // Agar slider already initialized hai, slidesToShow update karna hoga
-            $('.pic_box').slick('slickSetOption', 'slidesToShow', slidesToShow, true);
-        }
-    } else {
-        if ($('.pic_box').hasClass('slick-initialized')) {
-            $('.pic_box').slick('unslick');
-        }
-    }
-}
-
-mobileSlider();
-
-$(window).on('resize', function(){
-    mobileSlider();
-});
-
-
-
-});
-
-
-</script>
+<script type="text/javascript" src="assets/js/costom.js"></script>
 
 </body>
 </html>
