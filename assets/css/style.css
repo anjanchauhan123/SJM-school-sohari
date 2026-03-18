@@ -858,15 +858,30 @@ bottom: -22px;
 }
 
 @media (max-width:576px){
+
+    .staff-information, .result, .school-infrastructure, .general-information{
+        overflow: scroll;
+    }
+
+    .sub_heading{
+        font-size: 24px;
+    }
+
+    .table_coll{
+        width: 700px;
+    }
     .table_coll td{
         font-size: 12px;
         padding: 10px 11px;
     }
 
     .documents-and-information > a{
-        padding: 8px 15px;
         margin: 7px 4px;
         font-size: 12px;
+    }
+
+    .logo{
+        width: 220px;
     }
 
     .red_box{
@@ -880,10 +895,6 @@ bottom: -22px;
 
 /* mobile responsive */
 @media (max-width:990px){
-
-    .nav-menu a:hover, .nav-menu .active{
-        line-height: 2;
-    }
 
     .menu-toggle{
                display: block;
