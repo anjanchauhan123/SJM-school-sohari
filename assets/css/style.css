@@ -141,6 +141,7 @@ li.dropdown > a:after {
 .nav-menu .active{
     color: #f4b400;
     border-bottom: 2px solid #f4b400;
+    padding-bottom: 5px;
 }
 
 /* Submenu hidden by default */
@@ -840,57 +841,6 @@ bottom: -22px;
 }
 }
 
-/* Small devices (576px - 767px) */
-@media (max-width:767px){
-    .container{
-        max-width:100%;
-    }
-    .Public_disclosre{
-        padding: 0;
-    }
-
-    .banner img {
-   width: 100%;
-        height: 160px;
-        object-fit: cover;
-        object-position: 40%;
-}
-}
-
-@media (max-width:576px){
-
-    .staff-information, .result, .school-infrastructure, .general-information{
-        overflow: scroll;
-    }
-
-    .sub_heading{
-        font-size: 24px;
-    }
-
-    .table_coll{
-        width: 700px;
-    }
-    .table_coll td{
-        font-size: 12px;
-        padding: 10px 11px;
-    }
-
-    .documents-and-information > a{
-        margin: 7px 4px;
-        font-size: 12px;
-    }
-
-    .logo{
-        width: 220px;
-    }
-
-    .red_box{
-        padding: 20px;
-    }
-    .staff-information, .result, .school-infrastructure, .general-information{
-            padding: 30px 20px;
-    }
-}
 
 
 /* mobile responsive */
@@ -900,7 +850,7 @@ bottom: -22px;
                display: block;
         color: #fff;
         position: absolute;
-        right: 40px;
+        right: 15px;
     }
 
     .bg_img{
@@ -982,4 +932,63 @@ bottom: -22px;
 .order1{
     margin-top:20px; 
 }
+}
+
+
+/* Small devices (576px - 767px) */
+@media (max-width:767px){
+    .container{
+        max-width:100%;
+    }
+    .Public_disclosre{
+        padding: 0;
+    }
+
+    .banner img {
+   width: 100%;
+        height: 160px;
+        object-fit: cover;
+        object-position: 40%;
+}
+}
+
+@media (max-width:576px){
+
+    .staff-information, .result, .school-infrastructure, .general-information{
+        overflow: scroll;
+    }
+
+    .sub_heading{
+        font-size: 24px;
+    }
+
+    .table_coll td{
+                font-size: 10px;
+        padding: 10px 6px;
+    }
+
+    .documents-and-information {
+    padding: 20px 17px;
+}
+
+    .documents-and-information > a{
+                margin: 7px 3px;
+        font-size: 10px;
+        padding: 10px 35px 10px 9px;
+    }
+
+    .logo{
+        width: 220px;
+    }
+
+    .nav-menu {
+        top: 76px;
+    }
+
+    .red_box{
+        padding: 20px;
+    }
+    .staff-information, .result, .school-infrastructure, .general-information{
+            padding: 30px 20px;
+    }
 }
