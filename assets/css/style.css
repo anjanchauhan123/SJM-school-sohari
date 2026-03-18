@@ -56,7 +56,7 @@ img {
 figure {
     padding: 0;
     margin: 0;
-    border-radius: 8px;
+    border-radius: 15px;
     overflow: hidden;
 }
 
@@ -81,6 +81,10 @@ header{
     color:white;
 }
 
+.school-text{
+    display: none;
+}
+
 .school-text h3{
     margin: 10px 0 0 0px;
     font-size: 17px;
@@ -96,6 +100,12 @@ header{
     margin-right: 10px;
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
 .nav-menu{
     list-style:none;
     display:flex;
@@ -104,6 +114,21 @@ header{
 
 .nav-menu li.dropdown{
     position: relative;
+    padding-right: 11px;
+}
+
+li.dropdown > a:after {
+       background-image: url(../images/next-arrow-w.svg);
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background-position: center;
+    right: -6px;
+    top: 5px;
+    transform: rotate(90deg);
+    background-size: 7px;
+    background-repeat: no-repeat;
 }
 
 .nav-menu a{
@@ -122,7 +147,7 @@ header{
 .submenu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 129%;
     left: 0;
     background: #111;
     list-style: none;
@@ -210,7 +235,7 @@ header{
 }
 
 hr.hr{
-    border: 1px dashed #FFBB00;
+    border: 1px solid #FFE291;
     margin: 40px 0;
 }
 
@@ -322,10 +347,40 @@ span.number {
 }
 
 .sub_heading{
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
     margin: 0 0 20px 0;
 
+}
+
+
+.box{
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0 12px;
+}
+
+.box .title {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.box p {
+    text-align: left;
+}
+
+.box > .cta{
+    margin-top: 15px;
+    text-align: left;
+}
+
+.box i.icon {
+        margin-bottom: 15px;
+    display: flex;
+    width: 54px;
+    height: 54px;
 }
 
 
@@ -390,9 +445,27 @@ ul.slick-dots li{
     border: 1px solid #FFBB00;
 }
 
-.arrow,.slick-arrow {
-    width: 24px;
-    height: 24px;
+
+.toggle{
+        background: #FFBB00;
+    left: -32px;
+}
+
+
+.arrow{
+    width: 26px;
+    height: 26px;
+    font-size: 0;
+    border: 0;
+    border-radius: 50px;
+    position: absolute;
+    cursor: pointer;
+        background-size: 6px !important; 
+}
+
+.slick-arrow {
+    width: 38px;
+    height: 38px;
     font-size: 0;
     border: 0;
     border-radius: 50px;
@@ -401,31 +474,33 @@ ul.slick-dots li{
 }
 
 .next,.slick-next{
-    background: url(../images/previous-arrow.svg) #FFBB00;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 6px;
-    left: 0;
-    right: auto;
-}
-
-.slick-next{
-    top: 50%;
-    z-index: 1;
-}
-
-.slick-prev{
-    top: 50%;
-    z-index: 1;
-}
-
-.prev,.slick-prev{
     background: url(../images/next-arrow.svg) #FFBB00;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 6px;
+    background-size: 8px;
     right: 0;
     left: auto;
+}
+
+.slick-next{
+    top: 45%;
+    z-index: 1;
+    right: -15px;
+}
+
+.slick-prev{
+    top: 45%;
+    z-index: 1;
+    left: -15px !important;
+}
+
+.prev,.slick-prev{
+    background: url(../images/previous-arrow.svg) #FFBB00;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 8px;
+    left: 0;
+    right: auto;
 }
 
 
@@ -457,7 +532,7 @@ ul.slick-dots li{
 
 .text{
     background: #FFBB00;
-    border: 1px solid #0C0C0C;
+    border: 2px solid #0C0C0C;
     padding: 20px;
     border-radius: 12px;
     height:80px;
@@ -535,9 +610,24 @@ ul.map_details {
 }
 
 
-.Public_disclosre .slick-slide > div > h4 {
+.Public_disclosre ul.slick-dots li{
+    width: 10px;
+    height: 10px;
+}
+
+.Public_disclosre ul.slick-dots li.slick-active{
+    width: 20px;
+}
+
+
+.Public_disclosre .slick-slide > div > h4,
+.academics-public-disclosre h4 {
     font-size: 20px;
     margin-bottom: 20px;
+}
+
+.academics-public-disclosre .slide {
+    margin-bottom: 40px;
 }
 
 .result-x{
@@ -552,7 +642,7 @@ ul.map_details {
 
 .table_coll td{
     border: 1px solid #fff;
-    padding: 8px 13px;
+    padding: 10px 13px;
     font-size: 14px;
     line-height: 18px;
 }
@@ -567,14 +657,20 @@ ul.map_details {
 
 .documents-and-information > a {
     border: 1px solid #000;
-    background: #fff;
+    background: url(../images/next-arrow.svg) right 21px center / 6px no-repeat #fff;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 40px 10px 20px;
     margin: 7px 4px;
     text-decoration: none;
     border-radius: 30px;
     color: #000;
     font-size: 13px;
+}
+
+.documents-and-information > a:hover{
+    background: url(../images/next-arrow-w.svg) right 21px center / 6px no-repeat #E60019;
+    color: #fff;
+    border-color: #E60019;
 }
 
 .staff-information,.result,.school-infrastructure,.general-information {
@@ -603,18 +699,62 @@ ul.map_details {
     padding-right:15px;
 }
 
+h1.main-title {
+    font-size: 27px;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    line-height: 1;
+}
+
+.breadcrumb > a {
+    font-size: 14px;
+    text-decoration: none;
+    margin-right: 5px;
+
+}
+
+.breadcrumb > a.home{
+    color: #E60019;
+    margin-right: 3px;
+}
+
 .banner{
     line-height: 0;
+    position: relative;
+}
+
+.caption_layer {
+   position: absolute;
+    top: 20px;
+    bottom: 11px;
+    display: flex;
+    align-items: end;
+    left: 0;
+    right: 0;
+    flex-wrap: wrap;
+    line-height: 1;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.form_heading{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #D5D5D5;
+    padding-bottom: 15px;
 }
 
 
 
 .form-container {
-    max-width: 600px;
     margin: auto;
     background: #fff;
-    padding: 25px;
-    border-radius: 10px;
+    padding: 35px;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 
 }
@@ -642,11 +782,22 @@ ul.map_details {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
+    height: 44px;
+    font-family: "Poppins", sans-serif;
+            font-weight: 500;
 }
 
-textarea {
+.form-container textarea {
     resize: none;
     height: 100px;
+
+}
+
+
+.academics_bg{
+   background: url(../images/academics_bg.jpg);
+    padding: 50px 0;
+    background-size: contain;
 }
 
 
@@ -660,6 +811,14 @@ textarea {
     .container{
         max-width:960px;
     }
+
+    .nav-menu{
+        gap:20px;
+    }
+
+    .logo{
+        width: 300px;
+    }
 }
 
 /* Medium devices (768px - 991px) */
@@ -667,6 +826,18 @@ textarea {
     .container{
         max-width:720px;
     }
+}
+
+@media (max-width: 992px){
+        .three_box {
+    padding: 0 20px;
+    margin: 0 10px;
+}
+
+
+  .three_box  ul.slick-dots{
+bottom: -22px;
+}
 }
 
 /* Small devices (576px - 767px) */
@@ -677,11 +848,19 @@ textarea {
     .Public_disclosre{
         padding: 0;
     }
+
+    .banner img {
+   width: 100%;
+        height: 160px;
+        object-fit: cover;
+        object-position: 40%;
+}
 }
 
 @media (max-width:576px){
     .table_coll td{
         font-size: 12px;
+        padding: 10px 11px;
     }
 
     .documents-and-information > a{
@@ -693,14 +872,24 @@ textarea {
     .red_box{
         padding: 20px;
     }
+    .staff-information, .result, .school-infrastructure, .general-information{
+            padding: 30px 20px;
+    }
 }
 
 
 /* mobile responsive */
 @media (max-width:990px){
 
+    .nav-menu a:hover, .nav-menu .active{
+        line-height: 2;
+    }
+
     .menu-toggle{
-        display:block;
+               display: block;
+        color: #fff;
+        position: absolute;
+        right: 40px;
     }
 
     .bg_img{
@@ -719,21 +908,24 @@ textarea {
         display: none;
     }
 
-    .nav-menu{
-        position:absolute;
-        top:70px;
-        left:0;
-        width:100%;
-        background:#000;
-        flex-direction:column;
-        align-items:center;
-        gap:20px;
-        padding:20px 0;
-        display:none;
+    nav{
+        display: none;
     }
 
-    .nav-menu.active{
-        display:flex;
+    .nav-menu{
+                position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 40px;
+        z-index: 1;
+    }
+
+    .active.active{
+        display:block;
     }
 
     .col {
@@ -770,5 +962,13 @@ textarea {
 
 .pic_box figure {
     margin: 0 10px;
+}
+
+.order1 {
+    order: 1;
+}
+
+.order1{
+    margin-top:20px; 
 }
 }

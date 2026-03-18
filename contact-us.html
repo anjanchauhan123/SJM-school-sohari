@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Vertical to Horizontal Scroll</title>
+<title>Contact Us</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,8 +11,6 @@
 <!-- Swiper CSS -->
 <!-- Slick CSS -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-
-
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
@@ -29,6 +27,8 @@
                 <span>SOHARI HAMIRPUR (H.P.)</span>
             </div>
         </div>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
 
         <nav>
             <ul class="nav-menu">
@@ -54,15 +54,23 @@
 
 <section>
     <div class="banner">
-        <div class="slide"><img src="assets/images/about-banner.jpg"></div>
+        <div class="slide"><img src="assets/images/inner-pages-hero.jpg">
+        <div class="caption_layer container">
+                <h1 class="main-title">Contact Us</h1>
+                <div class="breadcrumb">
+                    <a href="index.html" class="home">Home</a> <a>></a><a>Contact Us</a>
+                </div>
+            </div></div>
     </div>
 </section>
 
 
 <section class="bg_color">
     <div class="container">
+        <h3 class="sub_heading">Get in Touch With Us</h3>
         <div class="form-container">
-    <h3 class="sub_heading">Submit Your Query</h3>
+            <h4 class="form_heading">Submit Your Query:</h4>
+    
     
     <form action="https://formsubmit.co/rajinder.singh@nvish.com" method="POST">
         
@@ -72,26 +80,22 @@
     <input type="hidden" name="_next" value="thankyou.html">
 
     <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" name="name" placeholder="Enter your name" required>
+        <input type="text" name="name" placeholder="Full Name" required>
     </div>
 
     <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="email" name="email" placeholder="Email Address" required>
     </div>
 
     <div class="form-group">
-        <label>Mobile Number</label>
-        <input type="tel" name="phone" placeholder="Enter your phone number" required>
+        <input type="tel" name="phone" placeholder="Mobile Number" required>
     </div>
 
     <div class="form-group">
-        <label>Your Query</label>
-        <textarea name="message" placeholder="Write your query..." required></textarea>
+        <textarea name="message" placeholder="Write your query" required></textarea>
     </div>
 
-    <button type="submit">Submit</button>
+    <button type="submit">Submit Your Query</button>
 
 </form>
     </div>
@@ -126,4 +130,11 @@
     </div>
 </section>
 </body>
+
+<!-- jQuery (Slick dependency) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Slick JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="assets/js/costom.js"></script>
 </html>

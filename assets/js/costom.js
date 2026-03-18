@@ -1,7 +1,10 @@
 $(document).ready(function(){
 
-    // ----------------- Slider 1 -----------------
-    $('.slider').slick({
+     $(".menu-toggle").click(function(){
+        $("nav").toggleClass("active");
+    });
+
+     $('.slider').slick({
         dots: true,
         infinite: true,
         speed: 500,
@@ -12,41 +15,29 @@ $(document).ready(function(){
         autoplaySpeed: 3000
     });
 
-    // Custom buttons
     $('.next').click(function(){
         $('.slider').slick('slickNext');
     });
+
     $('.prev').click(function(){
         $('.slider').slick('slickPrev');
     });
 
-    // ----------------- Slider 2 (Public_disclosre) -----------------
-    function setEqualHeight(){
-        var maxHeight = 0;
-        $('.Public_disclosre .slick-slide').css('height','auto');
-        $('.Public_disclosre .slick-slide').each(function(){
-            var h = $(this).outerHeight();
-            if(h > maxHeight) maxHeight = h;
-        });
-        $('.Public_disclosre .slick-slide').height(maxHeight);
-    }
+    let isPlaying = true;
 
-    $('.Public_disclosre').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        autoplay: true,
-        autoplaySpeed: 3000
-    }).on('setPosition', function(){
-        setEqualHeight();
+    $('.toggle').click(function(){
+        if(isPlaying){
+            $('.slider').slick('slickPause');
+            $(this).html('<i class="fa-solid fa-play"></i>');
+        } else {
+            $('.slider').slick('slickPlay');
+            $(this).html('<i class="fa-solid fa-pause"></i>');
+        }
+        isPlaying = !isPlaying;
     });
 
-    $(window).on('resize', function(){
-        setEqualHeight();
-    });
+
+    
 
     // ----------------- Slider 3 (Mobile responsive) -----------------
     function mobileSlider(){
@@ -76,5 +67,60 @@ $(document).ready(function(){
     $(window).on('resize', function(){
         mobileSlider();
     });
+
+
+    $('.three_box').slick({
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+
+    responsive: [
+        {
+            breakpoint: 992, // tablet
+            settings: {
+                slidesToShow: 2,
+                arrows: true,
+                 dots: true,
+            }
+        },
+        {
+            breakpoint: 576, // mobile
+            settings: {
+                slidesToShow: 1,
+                arrows: true,
+                 dots: true,
+            }
+        }
+    ]
+});
+
+    // ----------------- Slider 2 (Public_disclosre) -----------------
+    function setEqualHeight(){
+        var maxHeight = 0;
+        $('.Public_disclosre .slick-slide').css('height','auto');
+        $('.Public_disclosre .slick-slide').each(function(){
+            var h = $(this).outerHeight();
+            if(h > maxHeight) maxHeight = h;
+        });
+        $('.Public_disclosre .slick-slide').height(maxHeight);
+    }
+
+    $('.Public_disclosre').slick({
+        slidesToShow: 1,
+        dots: true,
+   infinite:true,
+   slidesToScroll: 1,
+       }).on('setPosition', function(){
+        setEqualHeight();
+    });
+
+    $(window).on('resize', function(){
+        setEqualHeight();
+    });
+
+
 
 });
