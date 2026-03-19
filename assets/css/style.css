@@ -139,8 +139,8 @@ li.dropdown > a:after {
 
 .nav-menu a:hover,
 .nav-menu .active{
-    color: #f4b400;
-    border-bottom: 2px solid #f4b400;
+    color: #fff;
+    border-bottom: 2px solid #fff;
     padding-bottom: 5px;
 }
 
@@ -214,20 +214,43 @@ li.dropdown > a:after {
     box-sizing: border-box;
 }
 
-.cta ,.form-container button{
-   background: #E60019;
+.cta, .form-container button {
+    position: relative;
+    background: #E60019;
     border-radius: 40px;
     color: #fff;
     text-decoration: none;
-    padding: 14px 45px 14px 30px;
+    padding: 14px 44px 14px 24px;
     display: inline-block;
     font-size: 18px;
     margin-top: 30px;
     border: 0;
-    background-image: url(../images/next-arrow-w.svg);
-    background-repeat: no-repeat;
-    background-position: center right 25px;
-    background-size: 8px;
+    transition: all 0.3s ease;
+}
+
+.cta:hover , .form-container button:hover{
+        background: #0C0C0C;
+}
+
+/* Arrow as pseudo element */
+.cta::after, .form-container button::after {
+    content: "";
+    position: absolute;
+    right: 25px;
+    top: 52%;
+    width: 11px;
+    height: 11px;
+    background: url(../images/next-arrow-w.svg) no-repeat center;
+    background-size: contain;
+
+    transform: translateY(-50%) translateX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Hover pe smooth move */
+.cta:hover::after, 
+.form-container button:hover::after {
+    transform: translateY(-50%) translateX(6px);
 }
 
 
@@ -528,7 +551,10 @@ ul.slick-dots li{
     padding: 40px;
     border-radius: 16px;
     box-sizing: border-box;
-    margin-top: 50px;
+}
+
+.mb-0{
+    padding-bottom: 0; 
 }
 
 .text{
@@ -657,8 +683,9 @@ ul.map_details {
 }
 
 .documents-and-information > a {
+    position: relative;
     border: 1px solid #000;
-    background: url(../images/next-arrow.svg) right 21px center / 6px no-repeat #fff;
+    background: #fff;
     display: inline-block;
     padding: 10px 40px 10px 20px;
     margin: 7px 4px;
@@ -666,12 +693,36 @@ ul.map_details {
     border-radius: 30px;
     color: #000;
     font-size: 13px;
+    transition: all 0.3s ease;
 }
 
-.documents-and-information > a:hover{
-    background: url(../images/next-arrow-w.svg) right 21px center / 6px no-repeat #E60019;
+/* Arrow */
+.documents-and-information > a::after {
+    content: "";
+    position: absolute;
+    right: 21px;
+        top: 49%;
+    width: 8px;
+    height: 8px;
+    background: url(../images/next-arrow.svg) no-repeat center;
+    background-size: contain;
+
+    transform: translateY(-50%) translateX(0);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Hover */
+.documents-and-information > a:hover {
+    background: #E60019;
     color: #fff;
     border-color: #E60019;
+}
+
+/* Arrow hover move + color change */
+.documents-and-information > a:hover::after {
+    background: url(../images/next-arrow-w.svg) no-repeat center;
+    background-size: contain;
+    transform: translateY(-50%) translateX(6px);
 }
 
 .staff-information,.result,.school-infrastructure,.general-information {
@@ -903,6 +954,14 @@ bottom: -22px;
         padding: 0;
         margin-bottom: 15px; 
     }
+
+    .dropdown:hover .submenu{
+            width: 100%;
+    }
+
+    .container.header-flex {
+    max-width: 96%;
+}
 }
 
 
@@ -991,4 +1050,17 @@ bottom: -22px;
     .staff-information, .result, .school-infrastructure, .general-information{
             padding: 30px 20px;
     }
+
+    .banner img{
+        object-position: 25%;
+    }
+
+    h1.main-title{
+        font-size: 25px;
+    }
+
+    .documents-and-information .small {
+    padding: 0 20px;
 }
+}
+

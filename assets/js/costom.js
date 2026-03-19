@@ -1,8 +1,15 @@
 $(document).ready(function(){
 
-     $(".menu-toggle").click(function(){
-        $("nav").toggleClass("active");
-    });
+    $(".menu-toggle").click(function(){
+    $("nav").toggleClass("active");
+    
+    // Icon change karne ke liye logic
+    if ($("nav").hasClass("active")) {
+        $(this).text("✕"); // Close icon
+    } else {
+        $(this).text("☰"); // Hamburger icon
+    }
+});
 
      $('.slider').slick({
         dots: true,
