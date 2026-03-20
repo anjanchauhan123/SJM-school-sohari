@@ -1,5 +1,34 @@
 $(document).ready(function(){
 
+
+    window.addEventListener("scroll", function() {
+    let header = document.querySelector("header");
+
+    if (window.scrollY > 10) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+
+    document.querySelectorAll('a[href="#Notification"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const target = document.querySelector("#Notification");
+
+        const offset = 140; // top se space
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    });
+});
+    
+
     $(".menu-toggle").click(function(){
     $("nav").toggleClass("active");
     
@@ -10,6 +39,9 @@ $(document).ready(function(){
         $(this).text("☰"); // Hamburger icon
     }
 });
+
+
+
 
      $('.slider').slick({
         dots: true,
