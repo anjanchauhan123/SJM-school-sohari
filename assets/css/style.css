@@ -69,17 +69,28 @@ header{
     padding:20px 0;
 }
 
+header.scrolled{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
 .header-flex{
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
+
 .logo{
     display:flex;
     align-items:center;
     color:white;
-    width: 330px;
+    transition: all 0.3s ease;
+    width: 220px;
 }
 
 .school-text{
