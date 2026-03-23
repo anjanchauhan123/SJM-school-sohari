@@ -137,15 +137,7 @@ $(document).ready(function(){
 });
 
     // ----------------- Slider 2 (Public_disclosre) -----------------
-    function setEqualHeight(){
-        var maxHeight = 0;
-        $('.Public_disclosre .slick-slide').css('height','auto');
-        $('.Public_disclosre .slick-slide').each(function(){
-            var h = $(this).outerHeight();
-            if(h > maxHeight) maxHeight = h;
-        });
-        $('.Public_disclosre .slick-slide').height(maxHeight);
-    }
+   
 
     $('.Public_disclosre').slick({
         slidesToShow: 1,
@@ -155,6 +147,16 @@ $(document).ready(function(){
        }).on('setPosition', function(){
         setEqualHeight();
     });
+
+        function setEqualHeight(){
+        var maxHeight = 0;
+        $('.Public_disclosre .slick-slide').css('height','auto');
+        $('.Public_disclosre .slick-slide').each(function(){
+            var h = $(this).outerHeight();
+            if(h > maxHeight) maxHeight = h;
+        });
+        $('.Public_disclosre .slick-slide').height(maxHeight);
+    }
 
     $(window).on('resize', function(){
         setEqualHeight();
