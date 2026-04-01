@@ -121,7 +121,7 @@ header.scrolled{
 .nav-menu{
     list-style:none;
     display:flex;
-    gap:30px;
+    gap:25px;
 }
 
 .nav-menu li.dropdown{
@@ -150,7 +150,7 @@ li.dropdown > a:hover:after{
 .nav-menu a{
     text-decoration:none;
     color:#BDBDBD;
-    font-size:18px;
+    font-size:16px;
     border-bottom: 2px solid transparent;
     padding-bottom: 4px;
 }
