@@ -128,10 +128,34 @@ header.scrolled{
     background: #ffbb00;
     color: #000;
     border-bottom: 0;
-    padding: 6px 12px;
+    padding: 6px 18px 6px 9px;
     border-radius: 5px;
     font-size: 15px;
     transition: all 0.3s ease;
+}
+
+.nav-manu a.admission_btn:after{
+   background: #000;
+    content: "";
+    width: 1.5px;
+    height: 9px;
+    position: absolute;
+    background-position: center;
+    right: 9px;
+    top: 15px;
+    transform: rotate(45deg);
+}
+
+.nav-manu a.admission_btn:before{
+    background: #000;
+    content: "";
+    width: 1.5px;
+    height: 9px;
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    transform: rotate(-45deg);
+    margin: auto;
 }
 
 
