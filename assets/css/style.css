@@ -134,19 +134,18 @@ header.scrolled{
     transition: all 0.3s ease;
 }
 
-.nav-manu a.admission_btn:after{
+.nav-manu a.admission_btn::after{
    background: #000;
     content: "";
     width: 1.5px;
     height: 9px;
     position: absolute;
-    background-position: center;
     right: 9px;
     top: 15px;
     transform: rotate(45deg);
 }
 
-.nav-manu a.admission_btn:before{
+.nav-manu a.admission_btn::before{
     background: #000;
     content: "";
     width: 1.5px;
@@ -155,7 +154,6 @@ header.scrolled{
     right: 9px;
     top: 9px;
     transform: rotate(-45deg);
-    margin: auto;
 }
 
 
