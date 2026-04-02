@@ -1146,5 +1146,9 @@ bottom: -22px;
         padding: 8px 23px 8px 12px;
         font-size: 10px;
     }
+
+    .nav-menu {
+        top: 69px;
+    }
 }
 
