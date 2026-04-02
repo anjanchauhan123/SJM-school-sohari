@@ -242,7 +242,7 @@ li.dropdown > a:hover:after{
 }
 
 .Admissions_box .admission_btn{
-    position: inherit;
+    position: relative;
     margin-left: 17px;
 }
 
