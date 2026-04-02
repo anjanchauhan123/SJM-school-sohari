@@ -122,6 +122,11 @@ header.scrolled{
     list-style:none;
     display:flex;
     gap:25px;
+    padding-right: 142px;
+}
+
+header .container{
+    position: relative;
 }
 
 a.admission_btn{
@@ -135,6 +140,8 @@ a.admission_btn{
     font-size: 15px;
     border: 0;
     transition: all 0.3s ease;
+    position: absolute;
+    right: 0;
 }
 
 a.admission_btn:hover{
@@ -948,6 +955,14 @@ bottom: -22px;
 
 /* mobile responsive */
 @media (max-width:990px){
+
+    a.admission_btn{
+        right: 60px;
+    }
+
+    header .container{
+        position: inherit;
+    }
 
     .menu-toggle{
                display: block;
