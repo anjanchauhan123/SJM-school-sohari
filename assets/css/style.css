@@ -130,10 +130,9 @@ header.scrolled{
     border-radius: 40px;
     color: #fff;
     text-decoration: none;
-    padding: 14px 44px 14px 24px;
+    padding: 10px 30px 10px 16px;
     display: inline-block;
-    font-size: 18px;
-    margin-top: 30px;
+    font-size: 15px;
     border: 0;
     transition: all 0.3s ease;
 }
@@ -145,7 +144,7 @@ header.scrolled{
 .nav-menu a.admission_btn::after{
     content: "";
     position: absolute;
-    right: 25px;
+    right: 14px;
     top: 52%;
     width: 11px;
     height: 11px;
@@ -156,11 +155,8 @@ header.scrolled{
 }
 
 .nav-menu a.admission_btn:hover::after{
-    transform: translateY(-50%) translateX(6px);
+    transform: translateY(-50%) translateX(3px);
 }
-
-
-
 
 .nav-menu li.dropdown{
     position: relative;
