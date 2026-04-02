@@ -983,6 +983,7 @@ bottom: -22px;
     .Admissions_box .admission_btn{
         margin-left: 0;
         margin-top: 10px;
+        right: 0;
     }    
 
     header .container{
