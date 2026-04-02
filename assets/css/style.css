@@ -961,7 +961,7 @@ bottom: -22px;
     }
 
     header .container{
-        position: inherit;
+        position: initial;
     }
 
     .menu-toggle{
