@@ -1080,6 +1080,12 @@ bottom: -22px;
 
 @media (max-width:576px){
 
+    a.admission_btn{
+        right: 44px;
+            font-size: 12px;
+            padding: 10px 26px 10px 11px;
+    }
+
     .staff-information, .result, .school-infrastructure, .general-information{
         overflow: scroll;
     }
@@ -1104,7 +1110,7 @@ bottom: -22px;
     }
 
     .logo{
-        width: 220px;
+        width: 200px;
     }
 
     .nav-menu {
@@ -1129,5 +1135,16 @@ bottom: -22px;
     .documents-and-information .small {
     padding: 0 20px;
 }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 160px;
+    }
+
+    a.admission_btn{
+        padding: 8px 23px 8px 12px;
+        font-size: 10px;
+    }
 }
 
