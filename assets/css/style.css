@@ -124,7 +124,7 @@ header.scrolled{
     gap:25px;
 }
 
-.nav-menu a.admission_btn{
+a.admission_btn{
     position: relative;
     background: #E60019;
     border-radius: 40px;
@@ -137,11 +137,11 @@ header.scrolled{
     transition: all 0.3s ease;
 }
 
-.nav-menu a.admission_btn:hover{
+a.admission_btn:hover{
     background: #0C0C0C;
 }
 
-.nav-menu a.admission_btn::after{
+a.admission_btn::after{
     content: "";
     position: absolute;
     right: 14px;
@@ -154,7 +154,7 @@ header.scrolled{
     transition: transform 0.3s ease;
 }
 
-.nav-menu a.admission_btn:hover::after{
+a.admission_btn:hover::after{
     transform: translateY(-50%) translateX(3px);
 }
 
