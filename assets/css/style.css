@@ -125,41 +125,42 @@ header.scrolled{
 }
 
 .nav-menu a.admission_btn{
-    background: #ffbb00;
-    color: #000;
-    border-bottom: 0;
-    padding: 6px 18px 6px 9px;
-    border-radius: 5px;
-    font-size: 15px;
+    position: relative;
+    background: #E60019;
+    border-radius: 40px;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 44px 14px 24px;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 30px;
+    border: 0;
     transition: all 0.3s ease;
 }
 
-.nav-manu a.admission_btn::after{
-   background: #000;
-    content: "";
-    width: 1.5px;
-    height: 9px;
-    position: absolute;
-    right: 9px;
-    top: 15px;
-    transform: rotate(45deg);
-}
-
-.nav-manu a.admission_btn::before{
-    background: #000;
-    content: "";
-    width: 1.5px;
-    height: 9px;
-    position: absolute;
-    right: 9px;
-    top: 9px;
-    transform: rotate(-45deg);
-}
-
-
 .nav-menu a.admission_btn:hover{
-    background: #E60019;
+    background: #0C0C0C;
 }
+
+.nav-menu a.admission_btn::after{
+    content: "";
+    position: absolute;
+    right: 25px;
+    top: 52%;
+    width: 11px;
+    height: 11px;
+    background: url(../images/next-arrow-w.svg) no-repeat center;
+    background-size: contain;
+    transform: translateY(-50%) translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-menu a.admission_btn:hover::after{
+    transform: translateY(-50%) translateX(6px);
+}
+
+
+
 
 .nav-menu li.dropdown{
     position: relative;
